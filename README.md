@@ -16,22 +16,22 @@ There are several tests, which may run during testing this API, some example:
 
 Positive tests:
 ```
-  Try to connect to the remote host, check if is available, and SSH port must be configured on the remote.
-  Connect, using  correct ssh_host, ssh_user, ssh_password
-  Try to run a simple command like "ls" or "ls -la" to check the output result
-  Use the "Terminate" method to kill the running process
-  Check "pid" while command start to run, terminate
-  Check "exit code", when command finished by itself and after termination if they:
+  - Try to connect to the remote host, check if is available, and SSH port must be configured on the remote.
+  - Connect, using  correct ssh_host, ssh_user, ssh_password
+  - Try to run a simple command like "ls" or "ls -la" to check the output result
+  - Use the "Terminate" method to kill the running process
+  - Check "pid" while command start to run, terminate
+  - Check "exit code", when command finished by itself and after termination if they:
     running 'true' -> exit status: 0; running 'false' exit status: 1
 ```
 
 Negative tests:
 ```
-  Host is wrong
-  Host not support SSH connection
-  Execute the wrong command to see Exception outputs
-  Make first authorization with newly generated keys, without using "paramiko.AutoAddPolicy()"
-  Try to run the script, while this user already authorized, for example via "Putty"
+  - Host is wrong
+  - Host not support SSH connection
+  - Execute the wrong command to see Exception outputs
+  - Make first authorization with newly generated keys, without using "paramiko.AutoAddPolicy()"
+  - Try to run the script, while this user already authorized, for example via "Putty"
   ```
 
 Some examples from code:
