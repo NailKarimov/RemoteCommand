@@ -15,6 +15,7 @@ Please do following:
 There are several tests, which may run during testing this API, some example:
 
 Positive tests:
+```
   Try to connect to the remote host, check if is available, and SSH port must be configured on the remote.
   Connect, using  correct ssh_host, ssh_user, ssh_password
   Try to run a simple command like "ls" or "ls -la" to check the output result
@@ -22,18 +23,21 @@ Positive tests:
   Check "pid" while command start to run, terminate
   Check "exit code", when command finished by itself and after termination if they:
     running 'true' -> exit status: 0; running 'false' exit status: 1
+    ```
 
 Negative tests:
+```
   Host is wrong
   Host not support SSH connection
   Execute the wrong command to see Exception outputs
   Make first authorization with newly generated keys, without using "paramiko.AutoAddPolicy()"
   Try to run the script, while this user already authorized, for example via "Putty"
+  ```
 
 Some examples from code:
 
 1. Connect, using  correct ssh_host, ssh_user, ssh_password, run "ls -la", get "pid", get exit code:
-
+```
 rc1 = RemoteCommand("ls -la", "10.10.1.5", "paramiko", "a123456a")
 print('Run first scenario with positive result without errors: ')
 rc1.run()
@@ -42,6 +46,7 @@ print(rc1.get_result())
 print("Exit code is: " + str(rc1.get_exit_code()))
 print('End ------------------------------------------------------')
 print('')
+```
 
 Output:
 
@@ -57,7 +62,7 @@ End ------------------------------------------------------
 
 
 2. Connect, using  correct ssh_host, ssh_user, ssh_password, run "ls", get "pid", get exit code, terminate command, get exit code,
-
+```
 rc2 = RemoteCommand("ls", "10.10.1.5", "paramiko", "a123456a")
 print('Run second , using terminate, while command is run: ')
 rc2.run()
@@ -68,7 +73,7 @@ rc2.terminate()
 print("Exit code is: " + str(rc2.get_exit_code()))
 print('End ------------------------------------------------------')
 print('')
-
+```
 Output:
 
 Run second , using terminate, while command is run:
@@ -80,7 +85,7 @@ Exit code is: 1
 End ------------------------------------------------------
 
 3. Connect, using  incorrect ssh_host, ssh_user, ssh_password
-
+```
 # rc3 = RemoteCommand("ls", "10.10.1.5", "paramiko_false_name", "a123456a")
 # print('Run third scenario with invalid name: ')
 # print('End ------------------------------------------------------')
@@ -90,3 +95,4 @@ End ------------------------------------------------------
 # print('Run fourth scenario with invalid host: ')
 # print('End ------------------------------------------------------')
 # print('')
+```
