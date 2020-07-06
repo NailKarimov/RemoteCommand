@@ -49,7 +49,7 @@ print('')
 ```
 
 Output:
-
+```
 C:\Users\karim\Downloads\Homework>remcmd.py
 Run first scenario with positive result without errors:
 PID: 6371
@@ -59,7 +59,7 @@ drwxr-xr-x 7 root root 4096 Jul 6 11:22 ..
 
 Exit code is: 0
 End ------------------------------------------------------
-
+```
 
 2. Connect, using  correct ssh_host, ssh_user, ssh_password, run "ls", get "pid", get exit code, terminate command, get exit code,
 ```
@@ -75,7 +75,7 @@ print('End ------------------------------------------------------')
 print('')
 ```
 Output:
-
+```
 Run second , using terminate, while command is run:
 PID: 6394
 
@@ -83,7 +83,7 @@ Exit code is: 0
 Start to terminate command ls
 Exit code is: 1
 End ------------------------------------------------------
-
+```
 3. Connect, using  incorrect ssh_host, ssh_user, ssh_password
 ```
 # rc3 = RemoteCommand("ls", "10.10.1.5", "paramiko_false_name", "a123456a")
