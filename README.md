@@ -6,10 +6,11 @@ simple API for executing arbitrary command on remote host accessible over SSH
 connection.
 
 Please do following:
-
+```
 1. Choose readily available Python SSH library.
 2. Implement all missing methods in `RemoteCommand` class.
 3. Write tests for this API.
+```
 
 There are several tests, which may run during testing this API, some example:
 
