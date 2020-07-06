@@ -23,7 +23,7 @@ Positive tests:
   Check "pid" while command start to run, terminate
   Check "exit code", when command finished by itself and after termination if they:
     running 'true' -> exit status: 0; running 'false' exit status: 1
-    ```
+```
 
 Negative tests:
 ```
